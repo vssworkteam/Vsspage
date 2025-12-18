@@ -1,62 +1,115 @@
 <!doctype html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>當前賽程 | YOUR TOURNAMENT</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>淘汰賽 | Bracket</title>
 
-  <link rel="stylesheet" href="css/base.css" />
-  <link rel="stylesheet" href="css/schedule.css" />
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/bracket.css">
 </head>
 <body>
-  <!-- header：跟你前面頁面一樣那份 -->
-  <div class="topbar">
-    <div class="container nav">
-      <a class="brand" href="index.html"><span class="brand-badge"></span><span>YOUR TOURNAMENT</span></a>
-      <button class="menuBtn" data-menu-btn>選單</button>
-      <div class="navlinks" data-navlinks>
-        <a data-nav href="index.html">主頁</a>
-        <a data-nav href="schedule.html">當前賽程</a>
-        <a data-nav href="rules.html">規章</a>
-        <a data-nav href="organizer.html">主辦方</a>
-        <a data-nav href="players.html">選手資料</a>
-        <a data-nav href="contact.html">聯絡我們</a>
+
+<header class="container hero">
+  <h1 class="h1">勝部淘汰賽</h1>
+  <p class="sub">Bracket 視圖（類似 Valorant 官方）</p>
+</header>
+
+<main class="container bracket">
+
+  <!-- 第 1 輪 -->
+  <section class="round">
+    <div class="round-title">第 1 輪</div>
+
+    <div class="match">
+      <div class="team">
+        <span>G2 Esports</span>
+        <b>0</b>
+      </div>
+      <div class="team win">
+        <span>Paper Rex</span>
+        <b>2</b>
       </div>
     </div>
-  </div>
 
-  <header class="container hero">
-    <div class="kicker"><span class="kicker-dot"></span> Stage · Schedule</div>
-    <h1 class="h1">當前賽程</h1>
-    <p class="sub">日期分組 + 每場比賽可展開顯示細節（像 valorantesports 的「按一下顯示」）。</p>
-  </header>
-
-  <main class="container">
-    <section class="filters card">
-      <div class="pad filtersRow">
-        <div class="filtersLeft">
-          <button class="chip active" data-filter="all">全部</button>
-          <button class="chip" data-filter="upcoming">即將開始</button>
-          <button class="chip" data-filter="live">進行中</button>
-          <button class="chip" data-filter="done">已結束</button>
-        </div>
-
-        <div class="filtersRight">
-          <input class="search" type="search" placeholder="搜尋隊伍/賽事…" id="q" />
-        </div>
+    <div class="match">
+      <div class="team">
+        <span>Xi Lai Gaming</span>
+        <b>0</b>
       </div>
-    </section>
+      <div class="team win">
+        <span>Sentinels</span>
+        <b>2</b>
+      </div>
+    </div>
 
-    <section class="scheduleWrap" id="scheduleRoot">
-      <!-- schedule.js 會把日期區塊與比賽卡片渲染進來 -->
-    </section>
-  </main>
+    <div class="match">
+      <div class="team">
+        <span>Rex Regum Qeon</span>
+        <b>0</b>
+      </div>
+      <div class="team win">
+        <span>WOLVES ESPORTS</span>
+        <b>2</b>
+      </div>
+    </div>
 
-  <footer class="footer">
-    <div class="container">© 2026 YOUR TOURNAMENT</div>
-  </footer>
+    <div class="match">
+      <div class="team">
+        <span>FNATIC</span>
+        <b>1</b>
+      </div>
+      <div class="team win">
+        <span>Gen.G</span>
+        <b>2</b>
+      </div>
+    </div>
+  </section>
 
-  <script src="js/main.js"></script>
-  <script src="js/schedule.js"></script>
+  <!-- 第 2 輪 -->
+  <section class="round">
+    <div class="round-title">勝部組複賽</div>
+
+    <div class="match">
+      <div class="team win">
+        <span>Paper Rex</span>
+        <b>2</b>
+      </div>
+      <div class="team">
+        <span>Sentinels</span>
+        <b>0</b>
+      </div>
+    </div>
+
+    <div class="match">
+      <div class="team win">
+        <span>WOLVES ESPORTS</span>
+        <b>2</b>
+      </div>
+      <div class="team">
+        <span>Gen.G</span>
+        <b>0</b>
+      </div>
+    </div>
+  </section>
+
+  <!-- 第 3 輪 -->
+  <section class="round">
+    <div class="round-title">勝部組決賽</div>
+
+    <div class="match final">
+      <div class="team win">
+        <span>Paper Rex</span>
+        <b>2</b>
+      </div>
+      <div class="team">
+        <span>WOLVES ESPORTS</span>
+        <b>0</b>
+      </div>
+    </div>
+  </section>
+
+</main>
+
 </body>
 </html>
