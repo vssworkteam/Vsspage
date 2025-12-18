@@ -8,16 +8,18 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/bracket.css">
 </head>
+
 <body data-page="bracket.html">
-<body>
-  <!-- header -->
+  <!-- topbar（跟 index 一樣） -->
   <div class="topbar">
     <div class="container nav">
       <a class="brand" href="index.html">
         <span class="brand-badge"></span>
         <span>YOUR TOURNAMENT</span>
       </a>
+
       <button class="menuBtn" data-menu-btn>選單</button>
+
       <div class="navlinks" data-navlinks>
         <a data-nav href="index.html">主頁</a>
         <a data-nav href="bracket.html">當前賽程</a>
@@ -28,24 +30,21 @@
       </div>
     </div>
   </div>
-<header class="container hero">
-  <div class="kicker"><span class="kicker-dot"></span> Stage · Bracket</div>
-  <h1 class="h1">勝部淘汰賽</h1>
-  <p class="sub">分數全手動填 + SVG 連線自動對齊（隊名中線）</p>
-</header>
 
-<main class="container bracketWrap">
-  <div class="bracketStage" id="stage">
-    <!-- SVG wires（JS 會畫線） -->
-    <svg class="wires" id="wires"></svg>
+  <header class="container hero">
+    <div class="kicker"><span class="kicker-dot"></span> Stage · Bracket</div>
+    <h1 class="h1">勝部淘汰賽</h1>
+    <p class="sub">標題同水平 + 第2/3輪置中 + SVG 線條精準對齊</p>
+  </header>
 
-    <!-- Cards root -->
-    <div class="bracket" id="bracketRoot"></div>
-  </div>
-</main>
+  <main class="container bracketWrap">
+    <div class="bracketStage" id="stage">
+      <svg class="wires" id="wires"></svg>
+      <div class="bracket" id="bracketRoot"></div>
+    </div>
+  </main>
 
-<footer class="footer"><div class="container">© 2026 YOUR TOURNAMENT</div></footer>
-<script src="js/main.js"></script>
-<script src="js/bracket.js"></script>
+  <script src="js/bracket.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

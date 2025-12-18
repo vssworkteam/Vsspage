@@ -2,7 +2,7 @@
 
 .bracketStage{
   position: relative;
-  min-width: 980px;            /* 讓三欄有空間；你可調 */
+  min-width: 980px;
   padding: 12px 6px;
 }
 
@@ -34,11 +34,11 @@
   align-items: start;
 }
 
-/* round column */
+/* round column：標題固定在同一水平 */
 .round{
   display:flex;
   flex-direction:column;
-  gap: var(--gapY);
+  gap: 10px;
 }
 
 .roundTitle{
@@ -51,11 +51,20 @@
   margin-bottom: 4px;
 }
 
-/* 重要：第二輪、第三輪用「上方留白」讓卡片位置接近官方 bracket */
-.round[data-round="2"]{ padding-top: 88px; }
-.round[data-round="3"]{ padding-top: 176px; }
+/* ✅ match 容器：給 JS 做 translateY */
+.roundBody{
+  display:flex;
+  flex-direction:column;
+  gap: var(--gapY);
+  position: relative;
+}
 
-/* match card */
+/* ✅ 每一場外面加 wrapper，JS 對 wrapper 做 translateY（更乾淨） */
+.matchWrap{
+  transform: translateY(0px);
+  will-change: transform;
+}
+
 .match{
   border-radius: 12px;
   border: 1px solid rgba(255,255,255,.12);
@@ -85,6 +94,25 @@
   color: rgba(255,255,255,.78);
   font-weight: 950;
   font-size: 12px;
+}
+
+.metaLeft{
+  display:flex;
+  align-items:center;
+  gap: 8px;
+}
+
+.datePill{
+  display:inline-flex;
+  align-items:center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.05);
+  color: rgba(255,255,255,.78);
+  font-weight: 950;
+  font-size: 12px;
+  letter-spacing: .2px;
 }
 
 .state{
@@ -117,7 +145,6 @@
   background: #f5c46a;
 }
 
-/* 手機：直向堆疊 + 不畫線 */
 @media (max-width: 900px){
   .bracketStage{ min-width: 0; }
   .bracket{
@@ -126,6 +153,5 @@
     column-gap: 0;
     row-gap: 18px;
   }
-  .round[data-round="2"], .round[data-round="3"]{ padding-top: 0; }
   .wires{ display:none; }
 }
