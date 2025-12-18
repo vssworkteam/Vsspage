@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>當前賽程 | YOUR TOURNAMENT</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/schedule.css" />
+</head>
+<body>
+  <!-- header (同上) -->
+  <div class="topbar">
+    <div class="container nav">
+      <a class="brand" href="index.html"><span class="brand-badge"></span><span>YOUR TOURNAMENT</span></a>
+      <button class="menuBtn" data-menu-btn>選單</button>
+      <div class="navlinks" data-navlinks>
+        <a data-nav href="index.html">主頁</a>
+        <a data-nav href="schedule.html">當前賽程</a>
+        <a data-nav href="rules.html">規章</a>
+        <a data-nav href="organizer.html">主辦方</a>
+        <a data-nav href="players.html">選手資料</a>
+        <a data-nav href="contact.html">聯絡我們</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="container hero">
+    <div class="kicker"><span class="kicker-dot"></span> Stage 1 · Bracket</div>
+    <h1 class="h1">當前賽程</h1>
+    <p class="sub">用卡片顯示每一場：時間、隊伍、BO、狀態（即將開始/進行中/已結束）。</p>
+  </header>
+
+  <main class="container grid">
+    <section class="card span-12">
+      <div class="pad">
+        <div class="toolbar">
+          <span class="pill">全部</span>
+          <span class="pill">本週</span>
+          <span class="pill">季後賽</span>
+        </div>
+
+        <div class="matchGrid">
+          <article class="match">
+            <div class="status live">即將開始</div>
+            <div class="teams">
+              <div class="team"><img src="assets/placeholder-team.png" alt=""><span>Team A</span></div>
+              <div class="vs">VS</div>
+              <div class="team"><img src="assets/placeholder-team.png" alt=""><span>Team B</span></div>
+            </div>
+            <div class="metaRow">
+              <div class="meta"><div class="k">時間</div><div class="v">週五 19:00</div></div>
+              <div class="meta"><div class="k">賽制</div><div class="v">BO3</div></div>
+              <div class="meta"><div class="k">舞台</div><div class="v">Round 1</div></div>
+            </div>
+          </article>
+
+          <article class="match">
+            <div class="status done">已結束</div>
+            <div class="teams">
+              <div class="team"><img src="assets/placeholder-team.png" alt=""><span>Team C</span></div>
+              <div class="vs">VS</div>
+              <div class="team"><img src="assets/placeholder-team.png" alt=""><span>Team D</span></div>
+            </div>
+            <div class="metaRow">
+              <div class="meta"><div class="k">時間</div><div class="v">週六 21:30</div></div>
+              <div class="meta"><div class="k">賽制</div><div class="v">BO3</div></div>
+              <div class="meta"><div class="k">比分</div><div class="v">2 : 1</div></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container">© 2026 YOUR TOURNAMENT</div></footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
