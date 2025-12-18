@@ -13,21 +13,21 @@ const data = {
       title: "第1輪",
       roundIndex: 1,
       matches: [
-        { id:"r1m1", bo:3, state:"已完賽",
-          a:{ name:"G2 Esports", score:0, win:false },
-          b:{ name:"Paper Rex", score:2, win:true }
+        { id:"r1m1", bo:3, state:"未開始",
+          a:{ name:"TBD", score:0, win:false },
+          b:{ name:"TBD", score:2, win:true }
         },
-        { id:"r1m2", bo:3, state:"已完賽",
-          a:{ name:"Xi Lai Gaming", score:0, win:false },
-          b:{ name:"Sentinels", score:2, win:true }
+        { id:"r1m2", bo:3, state:"未開始",
+          a:{ name:"TBD", score:0, win:false },
+          b:{ name:"TBD", score:2, win:true }
         },
-        { id:"r1m3", bo:3, state:"已完賽",
-          a:{ name:"Rex Regum Qeon", score:0, win:false },
-          b:{ name:"WOLVES ESPORTS", score:2, win:true }
+        { id:"r1m3", bo:3, state:"未開始",
+          a:{ name:"TBD", score:0, win:false },
+          b:{ name:"TBD", score:2, win:true }
         },
-        { id:"r1m4", bo:3, state:"已完賽",
-          a:{ name:"FNATIC", score:1, win:false },
-          b:{ name:"Gen.G", score:2, win:true }
+        { id:"r1m4", bo:3, state:"未開始",
+          a:{ name:"TBD", score:1, win:false },
+          b:{ name:"TBD", score:2, win:true }
         },
       ]
     },
@@ -35,13 +35,13 @@ const data = {
       title: "勝部組複賽",
       roundIndex: 2,
       matches: [
-        { id:"r2m1", bo:3, state:"已完賽",
-          a:{ name:"Paper Rex", score:2, win:false },
-          b:{ name:"Sentinels", score:2, win:false }
+        { id:"r2m1", bo:3, state:"未開始",
+          a:{ name:"TBD", score:2, win:false },
+          b:{ name:"TBD", score:2, win:false }
         },
-        { id:"r2m2", bo:3, state:"已完賽",
-          a:{ name:"WOLVES ESPORTS", score:2, win:false },
-          b:{ name:"Gen.G", score:2, win:false }
+        { id:"r2m2", bo:3, state:"未開始",
+          a:{ name:"TBD", score:2, win:false },
+          b:{ name:"TBD", score:2, win:false }
         },
       ]
     },
