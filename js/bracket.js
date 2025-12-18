@@ -15,19 +15,19 @@ const data = {
       matches: [
         { id:"r1m1", bo:3, state:"未開始",
           a:{ name:"TBD", score:0, win:false },
-          b:{ name:"TBD", score:2, win:true }
+          b:{ name:"TBD", score:2, win:false }
         },
         { id:"r1m2", bo:3, state:"未開始",
           a:{ name:"TBD", score:0, win:false },
-          b:{ name:"TBD", score:2, win:true }
+          b:{ name:"TBD", score:2, win:false }
         },
         { id:"r1m3", bo:3, state:"未開始",
           a:{ name:"TBD", score:0, win:false },
-          b:{ name:"TBD", score:2, win:true }
+          b:{ name:"TBD", score:2, win:false }
         },
         { id:"r1m4", bo:3, state:"未開始",
           a:{ name:"TBD", score:1, win:false },
-          b:{ name:"TBD", score:2, win:true }
+          b:{ name:"TBD", score:2, win:false }
         },
       ]
     },
