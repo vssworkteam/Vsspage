@@ -1,9 +1,12 @@
-// 1) 自動標記導覽列 active
+// 1) 自動標記導覽列 active（更穩：不怕 query/hash/子目錄）
 (() => {
-  const path = location.pathname.split("/").pop() || "index.html";
+  const currentPath = location.pathname.replace(/\/$/, ""); // 去掉結尾 /
   document.querySelectorAll("[data-nav]").forEach(a => {
-    const href = a.getAttribute("href");
-    if (href === path) a.classList.add("active");
+    const linkPath = new URL(a.getAttribute("href"), location.href).pathname.replace(/\/$/, "");
+    // 只比對檔名或路徑尾端（避免 /folder/bracket.html 與 bracket.html 問題）
+    const cur = currentPath.split("/").pop();
+    const link = linkPath.split("/").pop();
+    if (cur && link && cur === link) a.classList.add("active");
   });
 })();
 
