@@ -1,59 +1,73 @@
 .bracketWrap { padding: 10px 0 70px; overflow-x: auto; }
 
+.bracketStage{
+  position: relative;
+  min-width: 980px;            /* 讓三欄有空間；你可調 */
+  padding: 12px 6px;
+}
+
+.wires{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  overflow: visible;
+}
+
+.wires path{
+  fill:none;
+  stroke: rgba(255,255,255,.28);
+  stroke-width: 1.2;
+}
+
 .bracket{
   --cardW: 290px;
-  --gapX: 110px;       /* 每輪間距 */
-  --gapY: 26px;        /* 同輪卡片間距 */
-  --line: rgba(255,255,255,.30);
-  --line2: rgba(255,255,255,.18);
+  --gapX: 140px;
+  --gapY: 26px;
 
+  position: relative;
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: var(--cardW);
   column-gap: var(--gapX);
   align-items: start;
-  padding: 10px 4px 0;
 }
 
 /* round column */
 .round{
-  position: relative;
-  display: grid;
-  row-gap: var(--gapY);
+  display:flex;
+  flex-direction:column;
+  gap: var(--gapY);
 }
 
 .roundTitle{
   background: rgba(255,255,255,.9);
   color:#000;
   font-weight: 950;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 8px 12px;
   width: fit-content;
   margin-bottom: 4px;
 }
 
-/* 每個 slot 是固定高度，讓下一輪能對齊到上一輪兩場的中間 */
-.slot{
-  position: relative;
-  height: 118px; /* match卡高度（約）+ 上下空間，建議別動太小 */
-  display:flex;
-  align-items:center;
-}
+/* 重要：第二輪、第三輪用「上方留白」讓卡片位置接近官方 bracket */
+.round[data-round="2"]{ padding-top: 88px; }
+.round[data-round="3"]{ padding-top: 176px; }
 
+/* match card */
 .match{
-  width: 100%;
   border-radius: 12px;
   border: 1px solid rgba(255,255,255,.12);
   background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
   box-shadow: 0 18px 50px rgba(0,0,0,.35);
-  overflow: hidden;
-  position: relative;
+  overflow:hidden;
+  width: 100%;
 }
 
-/* 上方 meta：BO + 狀態 */
 .metaBar{
   display:flex;
-  justify-content: space-between;
+  justify-content:space-between;
   align-items:center;
   gap: 10px;
   padding: 10px 12px;
@@ -71,7 +85,6 @@
   color: rgba(255,255,255,.78);
   font-weight: 950;
   font-size: 12px;
-  letter-spacing: .3px;
 }
 
 .state{
@@ -104,62 +117,15 @@
   background: #f5c46a;
 }
 
-/* ========= 彎折連線（重點） =========
-   我們用「上一輪兩個 match slot」各自畫 ──┐ 連到下一輪該 slot 的中線位置
-*/
-
-/* 每個 slot 都有一條「到下一輪的水平線」 */
-.slot[data-out="1"]::after{
-  content:"";
-  position:absolute;
-  right: calc(-1 * (var(--gapX)) + 8px);
-  top: 50%;
-  width: calc(var(--gapX) - 8px);
-  height: 1px;
-  background: var(--line);
-}
-
-/* slot 上/下半部的「垂直線」，把兩場合併成一條，形成 └──┐ 或 ┌──┘ */
-.slot[data-join="top"]::before,
-.slot[data-join="bottom"]::before{
-  content:"";
-  position:absolute;
-  right: calc(-1 * (var(--gapX)) + 8px);
-  width: 1px;
-  background: var(--line);
-}
-
-/* top：從 slot 中線往下拉（┐ 的直線） */
-.slot[data-join="top"]::before{
-  top: 50%;
-  height: calc(50% + (var(--gapY) / 2) + 59px); /* 59px約半個slot高度 */
-}
-
-/* bottom：從 slot 中線往上拉（┘ 的直線） */
-.slot[data-join="bottom"]::before{
-  bottom: 50%;
-  height: calc(50% + (var(--gapY) / 2) + 59px);
-}
-
-/* 下一輪 slot 畫「接收水平線」（從左邊進來） */
-.slot[data-in="1"] .match::after{
-  content:"";
-  position:absolute;
-  left: calc(-1 * (var(--gapX)) );
-  top: 50%;
-  width: calc(var(--gapX) - 8px);
-  height: 1px;
-  background: var(--line2);
-}
-
-/* 手機：改成直向列表，不畫線 */
+/* 手機：直向堆疊 + 不畫線 */
 @media (max-width: 900px){
+  .bracketStage{ min-width: 0; }
   .bracket{
     grid-auto-flow: row;
     grid-auto-columns: 1fr;
-    row-gap: 22px;
     column-gap: 0;
+    row-gap: 18px;
   }
-  .slot{ height: auto; }
-  .slot::before, .slot::after, .match::after{ display:none !important; }
+  .round[data-round="2"], .round[data-round="3"]{ padding-top: 0; }
+  .wires{ display:none; }
 }

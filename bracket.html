@@ -11,13 +11,19 @@
 <body>
 
 <header class="container hero">
-  <div class="kicker"><span class="kicker-dot"></span> Stage · Upper Bracket</div>
+  <div class="kicker"><span class="kicker-dot"></span> Stage · Bracket</div>
   <h1 class="h1">勝部淘汰賽</h1>
-  <p class="sub">彎折連線 + 自動推進 + BO 標籤（純 HTML/CSS/JS）</p>
+  <p class="sub">分數全手動填 + SVG 連線自動對齊（隊名中線）</p>
 </header>
 
 <main class="container bracketWrap">
-  <div class="bracket" id="bracketRoot"></div>
+  <div class="bracketStage" id="stage">
+    <!-- SVG wires（JS 會畫線） -->
+    <svg class="wires" id="wires"></svg>
+
+    <!-- Cards root -->
+    <div class="bracket" id="bracketRoot"></div>
+  </div>
 </main>
 
 <script src="js/bracket.js"></script>
