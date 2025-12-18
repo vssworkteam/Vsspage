@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>主頁 | YOUR TOURNAMENT</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+<body>
+  <!-- header -->
+  <div class="topbar">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <span class="brand-badge"></span>
+        <span>YOUR TOURNAMENT</span>
+      </a>
+      <button class="menuBtn" data-menu-btn>選單</button>
+      <div class="navlinks" data-navlinks>
+        <a data-nav href="index.html">主頁</a>
+        <a data-nav href="schedule.html">當前賽程</a>
+        <a data-nav href="rules.html">規章</a>
+        <a data-nav href="organizer.html">主辦方</a>
+        <a data-nav href="players.html">選手資料</a>
+        <a data-nav href="contact.html">聯絡我們</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="container hero">
+    <div class="kicker"><span class="kicker-dot"></span> 2026 Season · Stage 1</div>
+    <h1 class="h1">你的賽事首頁<br/>用「暗黑 + 紅」做出電競感</h1>
+    <p class="sub">這是一個純 HTML / CSS / JS 的多頁網站骨架：上方導覽、卡片式資訊、清楚的資訊層級。你可以逐步把賽程/規章/選手資料填進去。</p>
+
+    <div class="ctaRow">
+      <a class="btn" href="schedule.html">看賽程</a>
+      <a class="btn ghost" href="rules.html">查看規章</a>
+    </div>
+  </header>
+
+  <main class="container grid">
+    <section class="card span-7">
+      <div class="pad">
+        <div class="cardTitle">公告</div>
+        <div class="cardMeta">— 這裡放最新公告、報名截止、轉播連結、規則更新等。</div>
+        <div class="noticeList">
+          <div class="noticeItem">
+            <span class="pill">NEW</span>
+            <span>本週賽程已更新（含 BO3 / BO5 標記）</span>
+          </div>
+          <div class="noticeItem">
+            <span class="pill">INFO</span>
+            <span>Discord 報到頻道：#check-in</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card span-5">
+      <div class="pad">
+        <div class="cardTitle">快速入口</div>
+        <div class="quick">
+          <a class="quickItem" href="players.html">選手資料</a>
+          <a class="quickItem" href="organizer.html">主辦方</a>
+          <a class="quickItem" href="contact.html">聯絡我們</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="card span-12">
+      <div class="pad split">
+        <div>
+          <div class="cardTitle">賽事資訊</div>
+          <div class="cardMeta">地區、日期、賽制、獎金池等可以放這裡。</div>
+        </div>
+        <div class="facts">
+          <div class="fact"><div class="k">地區</div><div class="v">TW</div></div>
+          <div class="fact"><div class="k">賽制</div><div class="v">Double Elim</div></div>
+          <div class="fact"><div class="k">日期</div><div class="v">每月賽 / Stage Final</div></div>
+          <div class="fact"><div class="k">直播</div><div class="v">Twitch / YouTube</div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© 2026 YOUR TOURNAMENT · All Rights Reserved.</div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
