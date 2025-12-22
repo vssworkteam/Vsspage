@@ -10,7 +10,7 @@
 const data = {
   rounds: [
     {
-      title: "第1輪",
+      title: "小組賽",
       roundIndex: 1,
       matches: [
         { id:"r1m1", bo:1, date:"01/23 19:00", state:"未開始",
@@ -32,7 +32,7 @@ const data = {
       ]
     },
     {
-      title: "勝部組複賽",
+      title: "晉級賽",
       roundIndex: 2,
       matches: [
         { id:"r2m1", bo:3, date:"01/24 19:00", state:"未開始",
@@ -46,7 +46,7 @@ const data = {
       ]
     },
     {
-      title: "勝部組決賽",
+      title: "決賽",
       roundIndex: 3,
       matches: [
         { id:"r3m1", bo:5, date:"01/25 19:00", state:"未開始",
