@@ -1,24 +1,29 @@
-function normalizeFileName(pathname) {
-  // 只取檔名（最後一段），並去掉結尾 /
-  pathname = (pathname || "").replace(/\/+$/, "");
-  const last = pathname.split("/").pop();
-  return last || "index.html";
+async function loadBase() {
+  const holder = document.getElementById("site-base");
+  if (!holder) return;
+
+  const res = await fetch("partials/base.html");
+  const html = await res.text();
+  holder.innerHTML = html;
+
+  // base 載入完成後再初始化功能
+  setupMobileMenu();
+  setActiveNav();
+}
+
+function normalizePage(p) {
+  if (!p || p === "/" ) return "index.html";
+  p = p.split("?")[0].split("#")[0].replace(/\/+$/, "");
+  return p.split("/").pop() || "index.html";
 }
 
 function setActiveNav() {
-  const navLinks = Array.from(document.querySelectorAll("[data-nav]"));
-  if (!navLinks.length) return;
+  const cur =
+    document.body?.dataset?.page ||
+    normalizePage(location.pathname);
 
-  // 1) 先用 pathname 判斷
-  let cur = normalizeFileName(location.pathname);
-
-  // 2) 如果是首頁路徑 /，但 body 有指定 data-page，就用 data-page
-  const bodyPage = document.body?.dataset?.page;
-  if (bodyPage) cur = bodyPage;
-
-  navLinks.forEach(a => {
-    const href = (a.getAttribute("href") || "").split("?")[0].split("#")[0];
-    const link = href.replace(/\/+$/, "").split("/").pop() || href;
+  document.querySelectorAll("[data-nav]").forEach(a => {
+    const link = normalizePage(a.getAttribute("href"));
     a.classList.toggle("active", link === cur);
   });
 }
@@ -30,7 +35,4 @@ function setupMobileMenu() {
   btn.addEventListener("click", () => links.classList.toggle("open"));
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  setActiveNav();
-  setupMobileMenu();
-});
+document.addEventListener("DOMContentLoaded", loadBase);
