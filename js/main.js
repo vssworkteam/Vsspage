@@ -2,7 +2,7 @@ async function loadBase() {
   const holder = document.getElementById("site-base");
   if (!holder) return;
 
-  const res = await fetch("partials/base.html");
+  const res = await fetch("/partials/base.html");
   const html = await res.text();
   holder.innerHTML = html;
 
@@ -12,9 +12,9 @@ async function loadBase() {
 }
 
 function normalizePage(p) {
-  if (!p || p === "/" ) return "index.html";
+  if (!p || p === "/" ) return "/index.html";
   p = p.split("?")[0].split("#")[0].replace(/\/+$/, "");
-  return p.split("/").pop() || "index.html";
+  return p.split("/").pop() || "/index.html";
 }
 
 function setActiveNav() {
