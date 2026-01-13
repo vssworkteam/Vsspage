@@ -13,19 +13,19 @@ const data = {
       title: "小組賽",
       roundIndex: 1,
       matches: [
-        { id:"r1m1", bo:1, date:"01/23 19:00", state:"未開始",
+        { id:"r1m1", bo:1, date:"02/27 19:00", state:"未開始",
           a:{ name:"TBD", score:0, win:false },
           b:{ name:"TBD", score:0, win:false }
         },
-        { id:"r1m2", bo:1, date:"01/23 20:00", state:"未開始",
+        { id:"r1m2", bo:1, date:"02/27 20:00", state:"未開始",
           a:{ name:"TBD", score:0, win:false },
           b:{ name:"TBD", score:0, win:false }
         },
-        { id:"r1m3", bo:1, date:"01/23 21:00", state:"未開始",
+        { id:"r1m3", bo:1, date:"02/27 21:00", state:"未開始",
           a:{ name:"TBD", score:0, win:false },
           b:{ name:"TBD", score:0, win:false }
         },
-        { id:"r1m4", bo:1, date:"01/23 22:00", state:"未開始",
+        { id:"r1m4", bo:1, date:"02/27 22:00", state:"未開始",
           a:{ name:"TBD", score:0, win:false },
           b:{ name:"TBD", score:0, win:false }
         },
@@ -35,11 +35,11 @@ const data = {
       title: "晉級賽",
       roundIndex: 2,
       matches: [
-        { id:"r2m1", bo:3, date:"01/24 19:00", state:"未開始",
+        { id:"r2m1", bo:3, date:"02/28 19:00", state:"未開始",
           a:{ name:"TBD", score:0, win:false },
           b:{ name:"TBD", score:0, win:false }
         },
-        { id:"r2m2", bo:3, date:"01/24 21:30", state:"未開始",
+        { id:"r2m2", bo:3, date:"02/28 21:30", state:"未開始",
           a:{ name:"TBD", score:0, win:false },
           b:{ name:"TBD", score:0, win:false }
         },
@@ -49,7 +49,7 @@ const data = {
       title: "決賽",
       roundIndex: 3,
       matches: [
-        { id:"r3m1", bo:5, date:"01/25 19:00", state:"未開始",
+        { id:"r3m1", bo:5, date:"03/01 19:00", state:"未開始",
           a:{ name:"TBD", score:null, win:false },
           b:{ name:"TBD", score:null, win:false }
         }
