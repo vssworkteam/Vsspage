@@ -47,3 +47,19 @@
   .span-7,.span-5{ grid-column: span 12; }
   .facts{ grid-template-columns: repeat(2, minmax(140px, 1fr)); }
 }
+/* ✅ 同一排卡片等高（grid row 以最高者為準，其他撐滿） */
+.grid{ align-items: stretch; }
+.card{ height: 100%; }
+
+/* ✅ 讓卡片內部可以撐滿高度 */
+.card .pad{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ✅ 讓列表區塊把剩餘高度吃掉（避免右邊比較矮） */
+.noticeList,
+.quick{
+  flex: 1;
+}
