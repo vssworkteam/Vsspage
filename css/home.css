@@ -25,7 +25,15 @@
 .quickItem:hover{ color:var(--text); background: rgba(255,255,255,.06); }
 
 .split{ display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; align-items:flex-start; }
-.facts{ display:grid; grid-template-columns: repeat(4, minmax(140px, 1fr)); gap:10px; }
+.facts{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(140px, 1fr)); 
+  gap:10px;
+
+  width: fit-content;  
+  margin-left: auto; 
+}
+
 .fact{
   padding:12px 12px;
   border-radius: 14px;
