@@ -22,7 +22,12 @@
   color: var(--muted);
   font-weight:800;
 }
-.quickItem:hover{ color:var(--text); background: rgba(255,255,255,.06); }
+.quickItem:hover{
+  transform: translateY(-2px);
+  border-color: rgba(255,70,85,.35);
+  background: rgba(255,70,85,.08);
+}
+
 
 .split{ display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; align-items:flex-start; }
 .facts{
