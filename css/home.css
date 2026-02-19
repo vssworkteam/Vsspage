@@ -6,11 +6,30 @@
 
 .noticeList{ margin-top:14px; display:flex; flex-direction:column; gap:10px; }
 .noticeItem{
-  display:flex; gap:10px; align-items:center;
-  padding:12px 12px;
-  border-radius: 14px;
+  text-decoration: none;
+  color: inherit;
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  padding:12px;
+  border-radius:14px;
   border:1px solid rgba(255,255,255,.10);
   background: rgba(255,255,255,.04);
+
+  transition:.18s ease;
+}
+
+/* 🔥 Hover 電競感 */
+.noticeItem:hover{
+  transform: translateX(4px);
+  border-color: rgba(255,70,85,.35);
+  background: rgba(255,70,85,.08);
+}
+
+/* 點擊感 */
+.noticeItem:active{
+  transform: translateX(1px);
 }
 
 .quick{ margin-top:12px; display:grid; gap:10px; }
