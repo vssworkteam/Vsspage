@@ -27,3 +27,7 @@
 .noticeItem:active{
   transform: translateX(1px);
 }
+.noticePageCard{
+  max-width: 1200px;   /* ⭐ 控制不要太滿 */
+  margin: 0 auto;      /* ⭐ 置中 */
+}
