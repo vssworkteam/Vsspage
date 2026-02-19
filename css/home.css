@@ -42,6 +42,25 @@
 }
 .fact .k{ color:var(--muted); font-size:13px; font-weight:800; }
 .fact .v{ margin-top:4px; font-weight:900; letter-spacing:.2px; }
+/* 讓 fact 連結維持原本樣子 */
+.fact-link{
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: .18s ease;
+}
+
+/* Hover 電競感 */
+.fact-link:hover{
+  transform: translateY(-2px);
+  border-color: rgba(255,70,85,.35);
+  background: rgba(255,70,85,.08);
+}
+
+/* 點擊感 */
+.fact-link:active{
+  transform: translateY(0);
+}
 
 @media (max-width: 900px){
   .span-7,.span-5{ grid-column: span 12; }
