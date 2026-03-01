@@ -50,8 +50,8 @@ const data = {
       roundIndex: 3,
       matches: [
         { id:"r3m1", bo:5, date:"03/01 19:00", state:"未開始",
-          a:{ name:"TBD", score:null, win:false },
-          b:{ name:"TBD", score:null, win:false }
+          a:{ name:"TSMC", score:null, win:false },
+          b:{ name:"NOOB", score:null, win:false }
         }
       ]
     }
