@@ -49,9 +49,9 @@ const data = {
       title: "決賽",
       roundIndex: 3,
       matches: [
-        { id:"r3m1", bo:5, date:"03/29 19:00", state:"未開始",
-          a:{ name:"NOOB", score:null, win:false },
-          b:{ name:"BBBY", score:null, win:false }
+        { id:"r3m1", bo:5, date:"03/29 19:00", state:"已結束",
+          a:{ name:"NOOB", score:3, win:true },
+          b:{ name:"BBBY", score:0, win:false }
         }
       ]
     }
