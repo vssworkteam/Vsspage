@@ -37,7 +37,7 @@ const data = {
     },
 
     // 總決賽
-    { id:"gf", x:860, y:350, bo:5, date:"05/03 19:00", state:"未開始",
+    { id:"gf", x:860, y:350, bo:5, date:"05/03 21:30", state:"未開始",
       a:{ name:"TBD", score:null, win:false },
       b:{ name:"TBD", score:null, win:false }
     }
