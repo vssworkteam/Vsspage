@@ -1,11 +1,11 @@
-.bracketWrap {
+.bracketWrap{
   padding: 10px 0 70px;
   overflow-x: auto;
 }
 
 .bracketStage{
   position: relative;
-  min-width: 1180px;
+  min-width: 1260px;
   padding: 12px 6px;
 }
 
@@ -26,55 +26,33 @@
 
 .bracket{
   --cardW: 290px;
-  --gapX: 140px;
-  --gapY: 26px;
-
   position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 70px;
+  width: 1220px;
+  height: 760px;
 }
 
-.bracketSectionTitle{
-  font-weight: 950;
-  margin: 0 0 14px;
-  color: rgba(255,255,255,.9);
+/* 區塊標題：勝部組 / 敗部組 */
+.bracketGroupTitle{
+  position:absolute;
+  font-weight:950;
+  color:rgba(255,255,255,.92);
 }
 
-.bracketRow{
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: var(--cardW);
-  column-gap: var(--gapX);
-  align-items: start;
-}
-
-.round{
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-}
-
+/* 輪次標題 */
 .roundTitle{
+  position:absolute;
   background: rgba(255,255,255,.9);
   color:#000;
-  font-weight: 950;
-  border-radius: 10px;
-  padding: 8px 12px;
-  width: fit-content;
-  margin-bottom: 4px;
+  font-weight:950;
+  border-radius:10px;
+  padding:8px 12px;
+  width:fit-content;
 }
 
-.roundBody{
-  display:flex;
-  flex-direction:column;
-  gap: var(--gapY);
-  position: relative;
-}
-
+/* 單場比賽位置 */
 .matchWrap{
-  transform: translateY(0px);
-  will-change: transform;
+  position:absolute;
+  width: var(--cardW);
 }
 
 .match{
@@ -83,7 +61,7 @@
   background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
   box-shadow: 0 18px 50px rgba(0,0,0,.35);
   overflow:hidden;
-  width: 100%;
+  width:100%;
 }
 
 .metaBar{
@@ -161,11 +139,18 @@
     min-width:0;
   }
 
-  .bracketRow{
-    grid-auto-flow:row;
-    grid-auto-columns:1fr;
-    row-gap:18px;
-    column-gap:0;
+  .bracket{
+    width:100%;
+    height:auto;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+
+  .bracketGroupTitle,
+  .roundTitle,
+  .matchWrap{
+    position:static;
   }
 
   .wires{
