@@ -1,12 +1,21 @@
 .bracketWrap{
   padding: 10px 0 70px;
-  overflow-x: auto;
+  overflow-x: hidden;
 }
 
 .bracketStage{
   position: relative;
-  min-width: 1260px;
+  width: 100%;
+  min-width: 0;
   padding: 12px 6px;
+}
+
+.bracket{
+  --cardW: 290px;
+  position: relative;
+  width: 100%;
+  max-width: 1220px;
+  height: 760px;
 }
 
 .wires{
@@ -24,12 +33,6 @@
   stroke-width: 1.2;
 }
 
-.bracket{
-  --cardW: 290px;
-  position: relative;
-  width: 1220px;
-  height: 760px;
-}
 
 /* 區塊標題：勝部組 / 敗部組 */
 .bracketGroupTitle{
