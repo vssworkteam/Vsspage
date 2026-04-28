@@ -14,7 +14,7 @@ const data = {
   matches: [
     // 勝部
     { id:"ub1", x:0, y:88, bo:3, date:"05/01 19:00", state:"未開始",
-      a:{ name:"NOOB", score:null, win:false },
+      a:{ name:"NOOB", score:null, win:true },
       b:{ name:"EDGE", score:null, win:false }
     },
     { id:"ub2", x:0, y:288, bo:3, date:"05/01 21:30", state:"未開始",
