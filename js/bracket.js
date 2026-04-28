@@ -13,31 +13,31 @@ const data = {
 
   matches: [
     // 勝部
-    { id:"ub1", x:0, y:88, bo:3, date:"03/27 19:00", state:"未開始",
-      a:{ name:"Team A", score:null, win:false },
-      b:{ name:"Team B", score:null, win:false }
+    { id:"ub1", x:0, y:88, bo:3, date:"05/01 19:00", state:"未開始",
+      a:{ name:"NOOB", score:null, win:false },
+      b:{ name:"EDGE", score:null, win:false }
     },
-    { id:"ub2", x:0, y:288, bo:3, date:"03/27 21:00", state:"未開始",
-      a:{ name:"Team C", score:null, win:false },
-      b:{ name:"Team D", score:null, win:false }
+    { id:"ub2", x:0, y:288, bo:3, date:"05/01 21:30", state:"未開始",
+      a:{ name:"BKS", score:null, win:false },
+      b:{ name:"FF", score:null, win:false }
     },
-    { id:"ubf", x:430, y:188, bo:3, date:"03/28 19:00", state:"未開始",
+    { id:"ubf", x:430, y:188, bo:3, date:"05/02 19:00", state:"未開始",
       a:{ name:"TBD", score:null, win:false },
       b:{ name:"TBD", score:null, win:false }
     },
 
     // 敗部
-    { id:"lb1", x:0, y:588, bo:3, date:"03/28 21:00", state:"未開始",
+    { id:"lb1", x:0, y:588, bo:3, date:"05/02 21:30", state:"未開始",
       a:{ name:"TBD", score:null, win:false },
       b:{ name:"TBD", score:null, win:false }
     },
-    { id:"lbf", x:430, y:588, bo:3, date:"03/29 19:00", state:"未開始",
+    { id:"lbf", x:430, y:588, bo:3, date:"05/03 19:00", state:"未開始",
       a:{ name:"TBD", score:null, win:false },
       b:{ name:"TBD", score:null, win:false }
     },
 
     // 總決賽
-    { id:"gf", x:860, y:350, bo:5, date:"03/30 19:00", state:"未開始",
+    { id:"gf", x:860, y:350, bo:5, date:"05/03 19:00", state:"未開始",
       a:{ name:"TBD", score:null, win:false },
       b:{ name:"TBD", score:null, win:false }
     }
