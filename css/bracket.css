@@ -1,21 +1,9 @@
-.bracketWrap{
-  padding: 10px 0 70px;
-  overflow-x: hidden;
-}
+.bracketWrap { padding: 10px 0 70px; overflow-x: auto; }
 
 .bracketStage{
   position: relative;
-  width: 100%;
-  min-width: 0;
+  min-width: 980px;
   padding: 12px 6px;
-}
-
-.bracket{
-  --cardW: 290px;
-  position: relative;
-  width: 100%;
-  max-width: 1220px;
-  height: 760px;
 }
 
 .wires{
@@ -33,29 +21,48 @@
   stroke-width: 1.2;
 }
 
+.bracket{
+  --cardW: 290px;
+  --gapX: 140px;
+  --gapY: 26px;
 
-/* 區塊標題：勝部組 / 敗部組 */
-.bracketGroupTitle{
-  position:absolute;
-  font-weight:950;
-  color:rgba(255,255,255,.92);
+  position: relative;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: var(--cardW);
+  column-gap: var(--gapX);
+  align-items: start;
 }
 
-/* 輪次標題 */
+/* round column：標題固定在同一水平 */
+.round{
+  display:flex;
+  flex-direction:column;
+  gap: 10px;
+}
+
 .roundTitle{
-  position:absolute;
   background: rgba(255,255,255,.9);
   color:#000;
-  font-weight:950;
-  border-radius:10px;
-  padding:8px 12px;
-  width:fit-content;
+  font-weight: 950;
+  border-radius: 10px;
+  padding: 8px 12px;
+  width: fit-content;
+  margin-bottom: 4px;
 }
 
-/* 單場比賽位置 */
+/* ✅ match 容器：給 JS 做 translateY */
+.roundBody{
+  display:flex;
+  flex-direction:column;
+  gap: var(--gapY);
+  position: relative;
+}
+
+/* ✅ 每一場外面加 wrapper，JS 對 wrapper 做 translateY（更乾淨） */
 .matchWrap{
-  position:absolute;
-  width: var(--cardW);
+  transform: translateY(0px);
+  will-change: transform;
 }
 
 .match{
@@ -64,99 +71,87 @@
   background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
   box-shadow: 0 18px 50px rgba(0,0,0,.35);
   overflow:hidden;
-  width:100%;
+  width: 100%;
 }
 
 .metaBar{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  gap:10px;
-  padding:10px 12px;
-  border-bottom:1px solid rgba(255,255,255,.08);
-  background:rgba(0,0,0,.18);
+  gap: 10px;
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  background: rgba(0,0,0,.18);
+}
+
+.boPill{
+  display:inline-flex;
+  align-items:center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.05);
+  color: rgba(255,255,255,.78);
+  font-weight: 950;
+  font-size: 12px;
 }
 
 .metaLeft{
   display:flex;
   align-items:center;
-  gap:8px;
+  gap: 8px;
 }
 
-.boPill,
 .datePill{
   display:inline-flex;
   align-items:center;
-  padding:6px 10px;
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,.14);
-  background:rgba(255,255,255,.05);
-  color:rgba(255,255,255,.78);
-  font-weight:950;
-  font-size:12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.05);
+  color: rgba(255,255,255,.78);
+  font-weight: 950;
+  font-size: 12px;
+  letter-spacing: .2px;
 }
 
 .state{
-  color:rgba(255,255,255,.55);
-  font-weight:900;
-  font-size:12px;
+  color: rgba(255,255,255,.55);
+  font-weight: 900;
+  font-size: 12px;
 }
 
 .team{
   display:flex;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items:center;
-  padding:11px 12px;
-  font-weight:900;
-  color:rgba(255,255,255,.82);
-  background:rgba(0,0,0,.08);
+  padding: 11px 12px;
+  font-weight: 900;
+  color: rgba(255,255,255,.82);
+  background: rgba(0,0,0,.08);
 }
-
-.team + .team{
-  border-top:1px solid rgba(255,255,255,.08);
-}
-
-.team b{
-  font-weight:1000;
-  letter-spacing:.4px;
-}
+.team + .team{ border-top: 1px solid rgba(255,255,255,.08); }
+.team b{ font-weight: 1000; letter-spacing: .4px; }
 
 .team.win{
   color:#fff;
-  background:linear-gradient(to right, rgba(245,196,106,.22), rgba(0,0,0,.06) 70%);
-  position:relative;
+  background: linear-gradient(to right, rgba(245,196,106,.22), rgba(0,0,0,.06) 70%);
+  position: relative;
 }
-
 .team.win::before{
   content:"";
-  position:absolute;
-  left:0;
-  top:0;
-  bottom:0;
-  width:4px;
-  background:#f5c46a;
+  position:absolute; left:0; top:0; bottom:0;
+  width: 4px;
+  background: #f5c46a;
 }
 
 @media (max-width: 900px){
-  .bracketStage{
-    min-width:0;
-  }
-
+  .bracketStage{ min-width: 0; }
   .bracket{
-    width:100%;
-    height:auto;
-    display:flex;
-    flex-direction:column;
-    gap:18px;
+    grid-auto-flow: row;
+    grid-auto-columns: 1fr;
+    column-gap: 0;
+    row-gap: 18px;
   }
-
-  .bracketGroupTitle,
-  .roundTitle,
-  .matchWrap{
-    position:static;
-  }
-
-  .wires{
-    display:none;
-  }
+  .wires{ display:none; }
 }
