@@ -13,20 +13,20 @@ const data = {
       title: "小組賽",
       roundIndex: 1,
       matches: [
-        { id:"r1m1", bo:1, date:"07/24 19:00", state:"未開始",
-          a:{ name:"TBD", score:0, win:false },
+        { id:"r1m1", bo:1, date:"07/24 19:00", state:"已結束",
+          a:{ name:"EDGE", score:0, win:true },
           b:{ name:"TBD", score:0, win:false }
         },
-        { id:"r1m2", bo:1, date:"07/24 20:00", state:"未開始",
-          a:{ name:"TBD", score:0, win:false },
+        { id:"r1m2", bo:1, date:"07/24 20:00", state:"已結束",
+          a:{ name:"SUPA", score:0, win:true },
           b:{ name:"TBD", score:0, win:false }
         },
-        { id:"r1m3", bo:1, date:"07/24 21:00", state:"未開始",
-          a:{ name:"TBD", score:0, win:false },
+        { id:"r1m3", bo:1, date:"07/24 21:00", state:"已結束",
+          a:{ name:"RGSB", score:0, win:true },
           b:{ name:"TBD", score:0, win:false }
         },
-        { id:"r1m4", bo:1, date:"07/24 22:00", state:"未開始",
-          a:{ name:"TBD", score:0, win:false },
+        { id:"r1m4", bo:1, date:"07/24 22:00", state:"已結束",
+          a:{ name:"OBEY", score:0, win:true },
           b:{ name:"TBD", score:0, win:false }
         },
       ]
@@ -36,12 +36,12 @@ const data = {
       roundIndex: 2,
       matches: [
         { id:"r2m1", bo:3, date:"07/25 19:00", state:"未開始",
-          a:{ name:"TBD", score:0, win:false },
-          b:{ name:"TBD", score:0, win:false }
+          a:{ name:"EDGE", score:0, win:false },
+          b:{ name:"RGSB", score:0, win:false }
         },
         { id:"r2m2", bo:3, date:"07/25 21:30", state:"未開始",
-          a:{ name:"TBD", score:0, win:false },
-          b:{ name:"TBD", score:0, win:false }
+          a:{ name:"SUPA", score:0, win:false },
+          b:{ name:"OBEY", score:0, win:false }
         },
       ]
     },
